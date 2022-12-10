@@ -35,9 +35,9 @@ describe("Todo Application", function () {
     expect(parsedResponse.id).toBeDefined();
   });
 
-  test("Marks a todo with the given ID as complete", async () => {
+  test("This Marks a todo with the given ID as complete", async () => {
     const response = await agent.post("/todos").send({
-      title: "Buy milk",
+      title: "Buy Milk..",
       dueDate: new Date().toISOString(),
       completed: false,
     });
@@ -55,12 +55,12 @@ describe("Todo Application", function () {
 
   test("Fetches all todos in the database using /todos endpoint", async () => {
     await agent.post("/todos").send({
-      title: "Buy xbox",
+      title: "Buy Xbox..",
       dueDate: new Date().toISOString(),
       completed: false,
     });
     await agent.post("/todos").send({
-      title: "Buy ps3",
+      title: "Buy PS3..",
       dueDate: new Date().toISOString(),
       completed: false,
     });
@@ -74,7 +74,7 @@ describe("Todo Application", function () {
   test("Deletes a todo with the given ID if it exists and sends a boolean response", async () => {
     // FILL IN YOUR CODE HERE
     const response = await agent.post("/todos").send({
-      title: "Buy notes",
+      title: "Buy Notes...",
       dueDate: new Date().toISOString(),
       completed: false,
     });
